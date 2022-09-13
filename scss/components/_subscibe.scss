@@ -1,0 +1,71 @@
+.subcribe{
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: 100px;
+
+    .subcribe-container{
+        width: 100%;
+        height: 100%;
+        @include flex(center,center);
+        flex-direction: column;
+
+        .subcribe-title{
+            font-size: $title-color;
+            font-weight: $font-bold;
+            background: $main-second-color;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subcribe-subtitle{
+            width: 400px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .subcribe-form{
+            #subcribe-email{
+                width: 385px;
+                padding: 17px 15px;
+                border-radius: 50px;
+                border: double 3px transparent;
+                background-image: linear-gradient(white, white), 
+                    linear-gradient(to right, #CC33D9FA, #021A38FA);
+                background-origin: border-box;
+                background-clip: padding-box, border-box;
+                @include mobile{
+                    width: 100%;
+                }
+            }
+            #subcribe-btn{
+                position: relative;
+                width: 155px;
+                height: 55px;
+                background: $main-second-color;
+                text-transform: uppercase;
+                color: $text-color;
+                font-weight: $font-bold;
+                border-radius: 50px;
+                overflow: hidden;
+                @include mobile{
+                    width: 100%;
+                    margin-top: 15px;
+                }
+            }
+            #subcribe-btn::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: $btn-hover;
+                transition: 0.4s;
+            }
+            #subcribe-btn:hover::before{
+                left: 100%;
+                transition: 0.4s;
+            }
+        }
+    }
+}

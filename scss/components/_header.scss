@@ -1,0 +1,115 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header-height;
+    z-index: 9999;
+    transition: 0.4s;
+
+
+    .container{
+        height: 100%;
+    }
+
+    &.active{
+        height: $header-shrink-height;
+        background: $main-second-color-45deg;
+        transition: 0.4s;
+    }
+
+    nav{
+        height: 100%;
+        @include flex(center,space-between);
+        .header-logo{
+            width: 200px;
+            height: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            @include mobile{
+                width: 150px;
+            }
+        }
+        .menu-toggle{
+            display: none;
+            @include tablet{
+                display: block;
+                font-size: 1.5rem;
+                font-weight: $font-bold;
+                color: $text-color;
+            }
+        }
+        .menu-toggle:hover{
+            cursor: pointer
+        }
+        .menu{
+            @include flex(center,center);
+            gap: 0 50px;
+            @include tablet{
+                flex-direction: column;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 80%;
+                height: 100vh;
+                background: linear-gradient(45deg, #021A38FA, #CC33D9FA);
+                border-left: 3px solid $text-color;
+                border-bottom: 3px solid $text-color;
+                row-gap: 50px;
+                transform: translateX(100%);
+                transition: transform 0.4s;
+                &.active{
+                    transform: translateX(0);
+                    transition: transform 0.4s;
+                }
+            }
+
+            .menu-item{
+                position: relative;
+                font-size: $normal-font;
+                font-weight: $font-bold;
+                color: $text-color;
+                transition: color 0.4s;
+            }
+
+            .menu-item:hover{
+               color: $backup-second-color;
+               transition: color 0.4s;
+            }
+
+            .menu-item::before{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 3px;
+                background: $backup-second-color;
+                transition: width 0.4s ease;
+            }
+
+            .menu-item:hover::before{
+                width: 100%;
+                transition: width 0.4s ease;
+            }
+
+            .menu-close{
+                display: none;
+                @include tablet{
+                    display: block;
+                    position: absolute;
+                    right: 7%;
+                    top: 4%;
+                    font-size: 1.5rem;
+                    color: $text-color;
+                    font-weight: $font-bold;
+                }
+            }
+            .menu-close:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}

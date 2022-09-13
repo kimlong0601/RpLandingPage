@@ -1,0 +1,44 @@
+/*Colors*/
+$main-color: linear-gradient(#021A38FA, #CC33D9FA);
+$main-color-45deg: linear-gradient(45deg, #021A38FA, #CC33D9FA);
+$main-second-color: linear-gradient(#CC33D9FA, #021A38FA);
+$main-second-color-45deg: linear-gradient(45deg, #CC33D9FA, #021A38FA);
+
+$backup-color: #021A38FA;
+$backup-second-color: #CC33D9FA;
+
+$btn-hover: linear-gradient(90deg, transparent, #fff, transparent);
+
+$icon-color: linear-gradient(#FD749B,#281AC8);
+
+$title-color: linear-gradient(#021A38FA, #CC33D9FA);
+
+$bg-color: #fff;
+
+$text-color: #fff;
+$text-second-color: #333333;
+
+/*Font size and family*/
+$body-font: 'Poppins', sans-serif; 
+$biggest-font-size: 48px;
+$big-font-size: 32px;
+$title-font: 28px;
+$normal-font: 20px;
+$small-font: 14px;
+
+/*Font weight*/
+$font-bold: 700;
+$font-black: 900;
+
+/*header-height*/
+$header-height: 100px;
+$header-tablet-height: 80px;
+$header-shrink-height: 80px;
+$header-mobile-height: 50px;
+
+/*box-shadow*/
+$box-shadow: linear-gradient(#021A38FA, #CC33D9FA) 0px 5px 15px;
+
+/*Responsive*/
+$mobile-width: 600px;
+$tablet-width: 1023px;

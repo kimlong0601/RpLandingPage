@@ -1,0 +1,110 @@
+.testimonials{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 200px 0;
+    margin-top: 100px;
+    background: $main-color;
+
+    @include mobile{
+        padding: 100px 0;
+    }
+    .testimonials-wave1{
+        position: absolute;
+        top: -1%;
+        left: 0;
+    }
+    .testimonials-wave2{
+        position: absolute;
+        bottom: -1%;
+        left: 0;
+    }
+    .testimonials-container{
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .testimonials-title{
+            width: 600px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: $text-color;
+            font-size: $title-font;
+            font-weight: $font-bold;
+            @include mobile{
+                width: 100%;
+                font-size: 24px;
+            }
+        }
+        .testimonials-subtitle{
+            width: 540px;
+            text-align: center;
+            color: $text-color;
+            margin-bottom: 30px;
+            @include mobile{
+                width: 100%;
+                font-size: 16px;
+            }
+        }
+        .testimonials-content{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            @include mobile{
+                padding: 0 10px;
+            }
+            &__box{
+                position: relative;
+                width: 440px;
+                height: auto;
+                padding: 10px 20px;
+                background-color: $text-color;
+                border-radius: 15px;
+                margin: 10px 0;
+                &__icons{
+                    margin: 5px 0;
+                    i{
+                        background: $icon-color;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                }
+                &__details{
+                    font-size: $small-font;
+                }
+                @include mobile{
+                    width: 100%;
+                    
+                }
+            }
+            &__box:nth-child(even) {
+                align-self: flex-end;
+            }
+            &__box::before{
+                content: '';
+                position: absolute;
+                right: -7%;
+                top: 40%;
+                width: 40px;
+                height: 30px;
+                clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+                background-color: $text-color;
+                rotate: 90deg;
+                @include mobile{
+                    display: none;
+                }
+            }
+            &__box:nth-child(even)::before{
+                left: -7%;
+                rotate: -90deg;
+            }
+
+            @include mobile{
+                &__box:nth-child(even), &__box:nth-child(odd){
+                    align-self: center;
+                }
+            }
+        }
+    }
+}
